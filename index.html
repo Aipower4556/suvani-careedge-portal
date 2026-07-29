@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suvani Fintech | Care Edge Investor Reports Hub</title>
+    <!-- Google Fonts: Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-wrapper">
+                    <span class="logo-icon"><i class="fa-solid fa-chart-line"></i></span>
+                    <div class="logo-text">
+                        <span class="brand-name">Suvani Fintech</span>
+                        <span class="brand-sub">Care Edge Portal</span>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item active" data-tab="dashboard">
+                        <a href="#"><i class="fa-solid fa-house"></i> <span>Dashboard Overview</span></a>
+                    </li>
+                    
+                    <!-- Collapsible Reports Category -->
+                    <li class="nav-category-header" onclick="toggleSidebarGroup('reports-group', this)">
+                        <span>Reports (newly do)</span>
+                        <i class="fa-solid fa-chevron-down toggle-arrow"></i>
+                    </li>
+                    <li id="reports-group" class="nav-category-list">
+                        <ul>
+                            <li class="nav-item" data-tab="daily">
+                                <a href="#"><i class="fa-solid fa-calendar-day"></i> <span>Daily Reports</span></a>
+                            </li>
+                            <li class="nav-item" data-tab="weekly">
+                                <a href="#"><i class="fa-solid fa-calendar-week"></i> <span>Weekly Reports</span></a>
+                            </li>
+                            <li class="nav-item" data-tab="monthly">
+                                <a href="#"><i class="fa-solid fa-calendar-days"></i> <span>Monthly Reports</span></a>
+                            </li>
+                            <li class="nav-item" data-tab="annual">
+                                <a href="#"><i class="fa-solid fa-calendar-plus"></i> <span>Annual Reports</span></a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Collapsible Collaboration Category -->
+                    <li class="nav-category-header" onclick="toggleSidebarGroup('collab-group', this)">
+                        <span>Collaboration</span>
+                        <i class="fa-solid fa-chevron-down toggle-arrow"></i>
+                    </li>
+                    <li id="collab-group" class="nav-category-list">
+                        <ul>
+                            <li class="nav-item" data-tab="discussion">
+                                <a href="#"><i class="fa-solid fa-comments"></i> <span>Team Board</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Team Section -->
+            <div class="sidebar-team">
+                <h4 class="team-title nav-category-header" onclick="toggleSidebarGroup('team-group', this)" style="border: none; padding: 0; margin-bottom: 0; margin-top: 0;">
+                    <span>Suvani Project Team (6)</span>
+                    <i class="fa-solid fa-chevron-down toggle-arrow"></i>
+                </h4>
+                <div id="team-group" class="team-list" style="margin-top: 12px;">
+                    <div class="team-member active-user" data-member="Vijay">
+                        <div class="avatar">VG<span class="status-indicator online"></span></div>
+                        <div class="member-info">
+                            <span class="member-name">Vijay Gurram</span>
+                            <span class="member-role">Power BI Dev</span>
+                        </div>
+                    </div>
+                    <div class="team-member" data-member="Rohan">
+                        <div class="avatar">RM<span class="status-indicator online"></span></div>
+                        <div class="member-info">
+                            <span class="member-name">Rohan Mehta</span>
+                            <span class="member-role">Lead Power BI Dev</span>
+                        </div>
+                    </div>
+                    <div class="team-member" data-member="Sneha">
+                        <div class="avatar">SS<span class="status-indicator online"></span></div>
+                        <div class="member-info">
+                            <span class="member-name">Sneha Sharma</span>
+                            <span class="member-role">Financial Analyst</span>
+                        </div>
+                    </div>
+                    <div class="team-member" data-member="Amit">
+                        <div class="avatar">AP<span class="status-indicator online"></span></div>
+                        <div class="member-info">
+                            <span class="member-name">Amit Patel</span>
+                            <span class="member-role">Relationship Mgr</span>
+                        </div>
+                    </div>
+                    <div class="team-member" data-member="Priya">
+                        <div class="avatar">PN<span class="status-indicator online"></span></div>
+                        <div class="member-info">
+                            <span class="member-name">Priya Nair</span>
+                            <span class="member-role">Data Engineer</span>
+                        </div>
+                    </div>
+                    <div class="team-member" data-member="Vikram">
+                        <div class="avatar">VS<span class="status-indicator away"></span></div>
+                        <div class="member-info">
+                            <span class="member-name">Vikram Singh</span>
+                            <span class="member-role">QA & Auditor</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="client-badge">
+                    <span class="badge-dot"></span>
+                    <span class="client-text">Working for <strong>Care Edge</strong></span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="main-header">
+                <div class="header-left">
+                    <h1 id="page-title">Dashboard Overview</h1>
+                    <p class="text-muted">Investor Reporting Hub & Power BI Insights</p>
+                </div>
+                <div class="header-right">
+                    <div class="date-widget">
+                        <i class="fa-regular fa-calendar"></i>
+                        <span id="current-date">July 29, 2026</span>
+                    </div>
+                    <div class="notifications-bell">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-profile" id="user-profile-btn" onclick="toggleProfileDropdown(event)">
+                        <div class="profile-avatar">VG</div>
+                        <span class="profile-name">Vijay Gurram (You)</span>
+                        <i class="fa-solid fa-chevron-down profile-dropdown-arrow" style="font-size: 0.75rem; color: var(--text-muted); transition: var(--transition);"></i>
+                        
+                        <!-- Dropdown Card -->
+                        <div class="profile-dropdown-card" id="profile-dropdown">
+                            <div class="dropdown-profile-header">
+                                <div class="dropdown-avatar">VG</div>
+                                <div class="dropdown-header-info">
+                                    <h4>Vijay Gurram</h4>
+                                    <span class="dropdown-role">Power BI Dev</span>
+                                </div>
+                            </div>
+                            
+                            <div class="dropdown-profile-body">
+                                <div class="profile-info-row">
+                                    <span class="info-label"><i class="fa-solid fa-building"></i> Company:</span>
+                                    <span class="info-value">Suvani Fintech</span>
+                                </div>
+                                <div class="profile-info-row">
+                                    <span class="info-label"><i class="fa-solid fa-handshake"></i> Client:</span>
+                                    <span class="info-value">Care Edge</span>
+                                </div>
+                                <div class="profile-info-row">
+                                    <span class="info-label"><i class="fa-solid fa-id-badge"></i> Employee ID:</span>
+                                    <span class="info-value">SF-2026-9042</span>
+                                </div>
+                                <div class="profile-info-row">
+                                    <span class="info-label"><i class="fa-solid fa-envelope"></i> Email:</span>
+                                    <span class="info-value">vijay.g@suvanifintech.com</span>
+                                </div>
+                                <div class="profile-info-row">
+                                    <span class="info-label"><i class="fa-solid fa-shield-halved"></i> Permissions:</span>
+                                    <span class="info-value text-success">BI Creator (Admin)</span>
+                                </div>
+                            </div>
+                            
+                            <div class="dropdown-profile-footer">
+                                <button class="btn btn-secondary dropdown-btn" onclick="simulateLogout(event)"><i class="fa-solid fa-right-from-bracket"></i> Log Out</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content Panels -->
+            <div class="content-wrapper">
+                
+                <!-- 1. DASHBOARD OVERVIEW TAB -->
+                <section id="dashboard-tab" class="tab-panel active">
+                    <!-- Banner -->
+                    <div class="dashboard-banner">
+                        <div class="banner-content">
+                            <h2>Care Edge Investor Reporting Portal</h2>
+                            <p>Collaboration workspace for Suvani Fintech developers and Care Edge stakeholders. Tracking and updating daily, weekly, monthly, and annual dashboards.</p>
+                            <div class="banner-actions">
+                                <button class="btn btn-primary" onclick="switchTab('daily')"><i class="fa-solid fa-play"></i> View Live Power BI Metrics</button>
+                                <button class="btn btn-secondary" onclick="switchTab('discussion')"><i class="fa-solid fa-message"></i> Open Team Discussion</button>
+                            </div>
+                        </div>
+                        <div class="banner-stats">
+                            <div class="stat-circle">
+                                <svg viewBox="0 0 36 36" class="circular-chart blue">
+                                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle" stroke-dasharray="92, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <text x="18" y="20.35" class="percentage">92%</text>
+                                </svg>
+                                <span class="circle-label">QA Pass Rate</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Metrics Grid -->
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-header">
+                                <span class="metric-title">Active Power BI Dashboards</span>
+                                <span class="metric-icon blue"><i class="fa-solid fa-chart-pie"></i></span>
+                            </div>
+                            <div class="metric-value">4 Main suites</div>
+                            <div class="metric-sub">Daily, Weekly, Monthly, Annual</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-header">
+                                <span class="metric-title">Last Report Sync</span>
+                                <span class="metric-icon green"><i class="fa-solid fa-arrows-rotate"></i></span>
+                            </div>
+                            <div class="metric-value">10 Mins Ago</div>
+                            <div class="metric-sub text-success"><i class="fa-solid fa-circle-check"></i> Automated ETL success</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-header">
+                                <span class="metric-title">Total Active Investors</span>
+                                <span class="metric-icon purple"><i class="fa-solid fa-user-tie"></i></span>
+                            </div>
+                            <div class="metric-value">148 Users</div>
+                            <div class="metric-sub">+12 new this quarter</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-header">
+                                <span class="metric-title">Discussion Activity</span>
+                                <span class="metric-icon orange"><i class="fa-solid fa-comments"></i></span>
+                            </div>
+                            <div class="metric-value">28 Comments</div>
+                            <div class="metric-sub">5 active members</div>
+                        </div>
+                    </div>
+
+                    <!-- Overview visual & quick links -->
+                    <div class="dashboard-details">
+                        <div class="details-chart-card">
+                            <h3>Reporting Status Breakdown</h3>
+                            <div class="chart-container">
+                                <!-- Customized pure CSS/SVG representation of status -->
+                                <div class="bar-chart-custom">
+                                    <div class="bar-group">
+                                        <span class="bar-label">Daily Sync</span>
+                                        <div class="bar-wrapper"><div class="bar-fill green" style="width: 100%;"></div></div>
+                                        <span class="bar-val">100% Ok</span>
+                                    </div>
+                                    <div class="bar-group">
+                                        <span class="bar-label">Weekly Compile</span>
+                                        <div class="bar-wrapper"><div class="bar-fill green" style="width: 95%;"></div></div>
+                                        <span class="bar-val">95% Ok</span>
+                                    </div>
+                                    <div class="bar-group">
+                                        <span class="bar-label">Monthly Audit</span>
+                                        <div class="bar-wrapper"><div class="bar-fill purple" style="width: 80%;"></div></div>
+                                        <span class="bar-val">80% Ready</span>
+                                    </div>
+                                    <div class="bar-group">
+                                        <span class="bar-label">Annual Investor Deck</span>
+                                        <div class="bar-wrapper"><div class="bar-fill orange" style="width: 60%;"></div></div>
+                                        <span class="bar-val">Draft Mode</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="quick-team-feed">
+                            <h3>Recent Team Updates</h3>
+                            <div class="activity-feed">
+                                <div class="feed-item">
+                                    <div class="feed-badge RM">RM</div>
+                                    <div class="feed-content">
+                                        <p><strong>Rohan Mehta</strong> updated the Power BI schema for <strong>Daily Reports</strong>.</p>
+                                        <span class="feed-time">1 hour ago</span>
+                                    </div>
+                                </div>
+                                <div class="feed-item">
+                                    <div class="feed-badge SS">SS</div>
+                                    <div class="feed-content">
+                                        <p><strong>Sneha Sharma</strong> verified investor yield tables in the <strong>Monthly Reports</strong>.</p>
+                                        <span class="feed-time">3 hours ago</span>
+                                    </div>
+                                </div>
+                                <div class="feed-item">
+                                    <div class="feed-badge VS">VS</div>
+                                    <div class="feed-content">
+                                        <p><strong>Vikram Singh</strong> marked <strong>Weekly Reports</strong> as audited and ready for release.</p>
+                                        <span class="feed-time">Yesterday</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. POWER BI SIMULATION REPORT TABS (DAILY, WEEKLY, MONTHLY, ANNUAL) -->
+                <section id="report-tab" class="tab-panel">
+                    <div class="powerbi-wrapper">
+                        <!-- Embed Toolbar -->
+                        <div class="powerbi-header">
+                            <div class="report-type-badge">
+                                <span class="pbi-logo">PBI</span>
+                                <span id="report-type-title">Daily Operations Report</span>
+                                <span id="pbi-live-status" class="pbi-live-status-bar"><i class="fa-solid fa-signal"></i> Live Connection Connected</span>
+                            </div>
+                            <div class="pbi-controls">
+                                <button class="btn btn-secondary" title="Configure Real Power BI" onclick="openConfigModal()" style="padding: 6px 12px; font-size: 0.8rem;"><i class="fa-solid fa-gear"></i> Setup Real PBI</button>
+                                <button class="btn btn-icon" title="Refresh Data" onclick="refreshReportData()"><i class="fa-solid fa-arrows-rotate"></i></button>
+                                <button class="btn btn-icon" title="Full Screen" onclick="toggleFullScreenReport()"><i class="fa-solid fa-expand"></i></button>
+                                <button class="btn btn-icon" title="Export PDF"><i class="fa-solid fa-file-pdf"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- Main Power BI Screen -->
+                        <div class="powerbi-iframe-simulation">
+                            <div class="pbi-nav-bar">
+                                <button class="pbi-nav-btn active" onclick="changePbiPage('summary')">Summary Dashboard</button>
+                                <button class="pbi-nav-btn" onclick="changePbiPage('details')">Performance Matrix</button>
+                                <button class="pbi-nav-btn" onclick="changePbiPage('investors')">Investor Breakdown</button>
+                            </div>
+
+                            <!-- Dashboard Simulated Viewport -->
+                            <div class="pbi-viewport">
+                                <!-- Visual elements dynamically generated via javascript -->
+                                <div id="pbi-visuals-container"></div>
+                            </div>
+
+                            <!-- PBI Footer status -->
+                            <div class="pbi-footer">
+                                <span class="footer-left"><i class="fa-solid fa-database"></i> Live Connection: CareEdge-DW-Prod</span>
+                                <span class="footer-right">Page 1 of 3 | Powered by Suvani Fintech PBI Engine</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Discussion Section Linked to Current Report Tab -->
+                    <div class="report-context-discussion">
+                        <div class="discussion-header-linked">
+                            <h3><i class="fa-solid fa-comments"></i> Focused Discussion on <span id="discussion-context-title">Daily Reports</span></h3>
+                            <span class="participant-count">6 Team Members Available</span>
+                        </div>
+                        <div class="discussion-feed" id="report-discussion-feed">
+                            <!-- Populated dynamically by javascript -->
+                        </div>
+                        <div class="discussion-input-area">
+                            <div class="sender-select-wrapper">
+                                <label for="sender-select">Post as:</label>
+                                <select id="sender-select" class="form-control-sm">
+                                    <option value="Vijay">Vijay Gurram (Power BI Dev)</option>
+                                    <option value="Rohan">Rohan Mehta (Lead PBI Dev)</option>
+                                    <option value="Sneha">Sneha Sharma (Analyst)</option>
+                                    <option value="Amit">Amit Patel (Relationship Mgr)</option>
+                                    <option value="Priya">Priya Nair (Data Eng)</option>
+                                    <option value="Vikram">Vikram Singh (QA Auditor)</option>
+                                </select>
+                            </div>
+                            <form id="comment-form" class="comment-input-form">
+                                <input type="text" id="comment-input" placeholder="Add a comment or note regarding this report..." required autocomplete="off" spellcheck="true">
+                                <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Post</button>
+                            </form>
+                            <div id="grammar-check-bar" class="grammar-check-feedback" style="display: none;"></div>
+                        </div>
+                    </div>
+                </section>
+                
+            </div>
+        </main>
+    <!-- Real Power BI Configuration Modal -->
+    <div id="pbi-config-modal" class="modal-overlay">
+        <div class="modal-content-wrapper">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-gear"></i> Integrate Real Power BI</h3>
+                <button class="modal-close-btn" onclick="closeConfigModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-subtitle">Paste your real Power BI **Embed Link** below. The portal will save this locally in your browser and connect to your live report instead of the simulated dashboard.</p>
+                
+                <div class="form-group-pbi">
+                    <label for="pbi-url-input">Active Report Link:</label>
+                    <input type="text" id="pbi-url-input" placeholder="e.g., https://app.powerbi.com/reportEmbed?..." autocomplete="off">
+                </div>
+                
+                <div class="modal-guide">
+                    <strong>How to get the correct link in Power BI:</strong>
+                    <p style="margin-bottom: 8px; font-weight: 500; color: #fff;">For Secure Reports (Requires Login):</p>
+                    <ol style="margin-bottom: 14px;">
+                        <li>Open your report on <strong>app.powerbi.com</strong>.</li>
+                        <li>Click <strong>File</strong> &rarr; <strong>Embed report</strong> &rarr; <strong>Website or portal</strong>.</li>
+                        <li>Copy the URL from the field labeled <strong>"Here is a link you can use to embed this content"</strong> (starts with <code>https://app.powerbi.com/reportEmbed</code>) and paste it above.</li>
+                        <li><em>Note: A "Sign In" button will appear inside our portal. Once you sign in with your credentials, the report will load securely.</em></li>
+                    </ol>
+                    
+                    <p style="margin-bottom: 8px; font-weight: 500; color: #fff;">For Public Reports (No Login Required):</p>
+                    <ol>
+                        <li>Click <strong>File</strong> &rarr; <strong>Embed report</strong> &rarr; <strong>Publish to web (public)</strong>.</li>
+                        <li>Copy the URL from the first box (starts with <code>https://app.powerbi.com/view</code>) and paste it above.</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="clearConfigUrl()" style="background: transparent; border: 1px solid var(--border-color); color: var(--text-muted);">Use Simulated Preview</button>
+                <button class="btn btn-primary" onclick="saveConfigUrl()">Save & Connect Live</button>
+            </div>
+        </div>
+    </div>
+    <!-- Simulated Login Screen overlay -->
+    <div id="login-screen" class="login-container-overlay" style="display: none;">
+        <div class="login-card">
+            <div class="login-logo">
+                <span class="logo-icon" style="margin: 0 auto 16px auto;"><i class="fa-solid fa-chart-line"></i></span>
+                <h2>Suvani Fintech</h2>
+                <p>Care Edge Reporting Hub Portal</p>
+            </div>
+            
+            <form id="login-form" onsubmit="handleSimulatedLogin(event)">
+                <div class="form-group-login">
+                    <label for="login-email">Corporate Email</label>
+                    <input type="email" id="login-email" value="vijay.g@suvanifintech.com" required autocomplete="username">
+                </div>
+                <div class="form-group-login">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" value="••••••••" required autocomplete="current-password">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Sign In with Suvani Account</button>
+            </form>
+            
+            <div class="login-footer-text">
+                <p><i class="fa-solid fa-lock"></i> Secured with Microsoft Entra ID (Azure AD)</p>
+            </div>
+        </div>
+    </div>
+    <!-- Main Script Sheet -->
+    <script src="app.js"></script>
+</body>
+</html>
