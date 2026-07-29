@@ -606,6 +606,10 @@ function simulateLogout(event) {
     const arrow = document.querySelector('.profile-dropdown-arrow');
     if (arrow) arrow.style.transform = 'rotate(0deg)';
     
+    // Clear password input
+    const pwdInput = document.getElementById('login-password');
+    if (pwdInput) pwdInput.value = '';
+    
     // Hide main portal, show login screen
     document.querySelector('.app-container').style.display = 'none';
     document.getElementById('login-screen').style.display = 'flex';
@@ -614,12 +618,27 @@ function simulateLogout(event) {
 function handleSimulatedLogin(event) {
     event.preventDefault();
     
-    // Hide login screen, show main portal
-    document.getElementById('login-screen').style.display = 'none';
-    document.querySelector('.app-container').style.display = 'flex';
+    const passwordInput = document.getElementById('login-password');
+    const errorMessage = document.getElementById('login-error-message');
     
-    // Quick success check alert/toast in console
-    console.log("Logged back in as Vijay Gurram.");
+    if (passwordInput && passwordInput.value === '1991') {
+        // Success
+        if (errorMessage) errorMessage.style.display = 'none';
+        
+        // Hide login screen, show main portal
+        document.getElementById('login-screen').style.display = 'none';
+        document.querySelector('.app-container').style.display = 'flex';
+        
+        // Clear password for security
+        passwordInput.value = '';
+        console.log("Authenticated successfully as Vijay Gurram.");
+    } else {
+        // Error
+        if (errorMessage) {
+            errorMessage.textContent = "Incorrect password. Access denied.";
+            errorMessage.style.display = 'block';
+        }
+    }
 }
 
 // Click outside dropdown to close it
@@ -753,6 +772,10 @@ elements.navItems.forEach(item => {
 document.addEventListener('DOMContentLoaded', () => {
     initDate();
     switchTab('dashboard');
+    
+    // Show login page by default (starts on login portal first!)
+    document.querySelector('.app-container').style.display = 'none';
+    document.getElementById('login-screen').style.display = 'flex';
     
     // Register Grammar Checking
     if (elements.commentInput) {
